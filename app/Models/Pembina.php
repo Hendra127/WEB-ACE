@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Pembina extends Model
+{
+    protected $table = 'pembina';
+
+    protected $fillable = [
+        'nama',
+        'foto'
+    ];
+}
