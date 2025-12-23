@@ -12,6 +12,9 @@
 
     <div class="absolute inset-0 flex items-center justify-center text-center text-white px-4">
         <div class="max-w-3xl">
+                     <button class="mb-6 px-4 py-2 bg-yellow-400 text-white rounded-full text-sm font-semibold hover:bg-dark-500 transition animate_animated animate_fadeInUp">
+                <a href="{{ route('loginpage') }}">LOGIN</a>
+            </button>
             <h1 class="text-5xl md:text-6xl font-bold mb-4 animate__animated animate__fadeInDown">
                 {{ $setting->hero_title ?? 'Welcome to ACE Lombok Experience' }}
             </h1>
@@ -29,7 +32,7 @@
 {{-- WELCOME SECTION --}}
 <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-6 text-center max-w-4xl">
-
+   
         <h2 class="text-4xl font-bold mb-6 leading-snug">
             Welcome to ACE Lombok Association
         </h2>
