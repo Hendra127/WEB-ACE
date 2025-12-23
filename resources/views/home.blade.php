@@ -12,6 +12,9 @@
 
     <div class="absolute inset-0 flex items-center justify-center text-center text-white px-4">
         <div class="max-w-3xl">
+            <button class="mb-6 px-4 py-2 bg-yellow-400 text-black rounded-full text-sm font-semibold hover:bg-yellow-500 transition animate__animated animate__fadeInUp">
+                <a href="{{ route('artikel') }}">LOGIN</a>
+            </button>
             <h1 class="text-5xl md:text-6xl font-bold mb-4 animate__animated animate__fadeInDown">
                 {{ $setting->hero_title ?? 'Welcome to ACE Lombok Experience' }}
             </h1>

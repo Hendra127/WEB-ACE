@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\IsAdmin;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
@@ -72,6 +74,9 @@ Route::post('/admin/event/update/{id}', [EventController::class, 'update'])->nam
 Route::delete('/admin/event/delete/{id}', [EventController::class, 'destroy'])->name('event.delete');
 Route::get('/event/{id}/rsvp', [EventController::class, 'rsvp'])->name('event.rsvp');
 Route::get('/event/{id}/calendar', [EventController::class, 'calendar'])->name('event.calendar');
+
+// Authentication Routes Middleware IsAdmin
+Route::get('/admin/{page?}', [AdminController::class, 'index']);
 
 
 
