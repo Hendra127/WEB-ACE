@@ -26,6 +26,7 @@ Route::get('/pembina/create', [PembinaController::class, 'create'])->name('pembi
 Route::post('/pembina/store', [PembinaController::class, 'store'])->name('pembina.store');
 Route::get('/pembina/{id}/edit', [PembinaController::class, 'edit'])->name('pembina.edit');
 Route::put('/pembina/{id}', [PembinaController::class, 'update'])->name('pembina.update');
+Route::delete('/pembina/{id}', [PembinaController::class, 'destroy'])->name('pembina.destroy');
 
 // Pengurus Routes
 Route::get('/pengurus', [PengurusController::class, 'index'])->name('pengurus');
@@ -69,14 +70,18 @@ Route::get('/artikel/views/{id}', [ArtikelController::class, 'getViews']);
 Route::get('/upcoming-event', [EventController::class, 'index'])->name('upcoming-event');
 Route::get('/upcoming-event/{id}', [EventController::class, 'show'])->name('event.show');
 Route::get('/event/views/{id}', [EventController::class, 'getViews'])->name('event.views');
+
 Route::post('/admin/event/store', [EventController::class, 'store'])->name('event.store');
-Route::post('/admin/event/update/{id}', [EventController::class, 'update'])->name('event.update');
-Route::delete('/admin/event/delete/{id}', [EventController::class, 'destroy'])->name('event.delete');
+Route::put('/admin/event/update/{id}', [EventController::class, 'update'])->name('event.update');
+Route::delete('/admin/event/delete/{id}', [EventController::class, 'destroy'])->name('event.destroy');
+
 Route::get('/event/{id}/rsvp', [EventController::class, 'rsvp'])->name('event.rsvp');
 Route::get('/event/{id}/calendar', [EventController::class, 'calendar'])->name('event.calendar');
 
+
 // Authentication Routes Middleware IsAdmin
 Route::get('/admin/{page?}', [AdminController::class, 'index']);
+
 
 
 

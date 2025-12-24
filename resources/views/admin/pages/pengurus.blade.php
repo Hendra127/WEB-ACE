@@ -5,7 +5,7 @@
         <div class="col-md-12">
 
             <h3 class="mb-4">
-                <i class="fas fa-images"></i> Kelola Galeri
+                <i class="fas fa-users"></i> Kelola Pengurus
             </h3>
 
             @if(session('success'))
@@ -18,35 +18,33 @@
             <div class="text-end mb-3">
                 <button class="btn btn-primary"
                         data-bs-toggle="modal"
-                        data-bs-target="#modalTambahGaleri">
-                    <i class="fas fa-plus"></i> Tambah Galeri
+                        data-bs-target="#modalTambahPengurus">
+                    <i class="fas fa-plus"></i> Tambah Pengurus
                 </button>
             </div>
 
             <div class="card">
                 <div class="card-header bg-secondary text-white">
                     <h5 class="mb-0">
-                        <i class="fas fa-list"></i> Daftar Galeri
+                        <i class="fas fa-list"></i> Daftar Pengurus
                     </h5>
                 </div>
 
                 <div class="card-body">
-                    @if(count($galeri))
+                    @if(count($pengurus))
                         <div class="row">
-
-                            @foreach($galeri as $g)
+                            @foreach($pengurus as $p)
                                 <div class="col-md-4 mb-4">
                                     <div class="card h-100 shadow-sm">
 
-                                        <img src="{{ asset('images/galeri/'.$g->foto) }}"
+                                        <img src="{{ asset('images/pengurus/'.$p->foto) }}"
                                              class="card-img-top"
-                                             style="height:250px;object-fit:cover;">
+                                             style="height:250px;object-fit:cover;"
+                                             alt="{{ $p->nama }}">
 
                                         <div class="card-body">
-                                            <h6>{{ $g->judul }}</h6>
-                                            <p class="small text-muted">
-                                                {{ Str::limit($g->deskripsi,60) }}
-                                            </p>
+                                            <h6>{{ $p->nama }}</h6>
+                                            <p class="small text-muted">{{ $p->jabatan }}</p>
                                         </div>
 
                                         <div class="card-footer bg-light">
@@ -54,13 +52,13 @@
                                             <!-- UPDATE BUTTON -->
                                             <button class="btn btn-warning btn-sm w-100 mb-2"
                                                     data-bs-toggle="modal"
-                                                    data-bs-target="#modalEditGaleri{{ $g->id }}">
+                                                    data-bs-target="#modalEditPengurus{{ $p->id }}">
                                                 <i class="fas fa-edit"></i> Update
                                             </button>
 
                                             <!-- DELETE -->
                                             <form method="POST"
-                                                  action="{{ route('galeri.destroy',$g->id) }}"
+                                                  action="{{ route('pengurus.destroy',$p->id) }}"
                                                   class="form-hapus">
                                                 @csrf
                                                 @method('DELETE')
@@ -74,23 +72,23 @@
                                     </div>
                                 </div>
 
-                                <!-- ================= MODAL EDIT (DI DALAM LOOP) ================= -->
+                                <!-- ================= MODAL EDIT ================= -->
                                 <div class="modal fade"
-                                     id="modalEditGaleri{{ $g->id }}"
+                                     id="modalEditPengurus{{ $p->id }}"
                                      tabindex="-1">
 
                                     <div class="modal-dialog modal-lg modal-dialog-centered">
                                         <div class="modal-content">
 
                                             <form method="POST"
-                                                  action="{{ route('galeri.update',$g->id) }}"
+                                                  action="{{ route('pengurus.update',$p->id) }}"
                                                   enctype="multipart/form-data">
                                                 @csrf
                                                 @method('PUT')
 
                                                 <div class="modal-header bg-warning">
                                                     <h5 class="modal-title">
-                                                        <i class="fas fa-edit"></i> Edit Galeri
+                                                        <i class="fas fa-edit"></i> Edit Pengurus
                                                     </h5>
                                                     <button class="btn-close"
                                                             data-bs-dismiss="modal"></button>
@@ -99,29 +97,21 @@
                                                 <div class="modal-body">
 
                                                     <div class="mb-3">
-                                                        <label>Judul</label>
+                                                        <label>Nama</label>
                                                         <input type="text"
-                                                               name="judul"
+                                                               name="nama"
                                                                class="form-control"
-                                                               value="{{ $g->judul }}"
+                                                               value="{{ $p->nama }}"
                                                                required>
                                                     </div>
 
                                                     <div class="mb-3">
-                                                        <label>Kategori</label>
+                                                        <label>Jabatan</label>
                                                         <input type="text"
-                                                               name="kategori"
+                                                               name="jabatan"
                                                                class="form-control"
-                                                               value="{{ $g->kategori }}"
+                                                               value="{{ $p->jabatan }}"
                                                                required>
-                                                    </div>
-
-                                                    <div class="mb-3">
-                                                        <label>Deskripsi</label>
-                                                        <textarea name="deskripsi"
-                                                                  class="form-control"
-                                                                  rows="4"
-                                                                  required>{{ $g->deskripsi }}</textarea>
                                                     </div>
 
                                                     <div class="mb-3">
@@ -130,7 +120,7 @@
                                                                name="foto"
                                                                class="form-control">
 
-                                                        <img src="{{ asset('images/galeri/'.$g->foto) }}"
+                                                        <img src="{{ asset('images/pengurus/'.$p->foto) }}"
                                                              class="img-fluid mt-2 rounded"
                                                              style="max-height:150px;">
                                                     </div>
@@ -155,12 +145,11 @@
                                 <!-- ================= END MODAL EDIT ================= -->
 
                             @endforeach
-
                         </div>
                     @else
                         <div class="alert alert-info text-center py-5">
                             <i class="fas fa-inbox fs-1 opacity-50"></i>
-                            <p class="mt-3">Belum ada data galeri</p>
+                            <p class="mt-3">Belum ada data pengurus</p>
                         </div>
                     @endif
                 </div>
@@ -171,18 +160,18 @@
 </div>
 
 <!-- ================= MODAL TAMBAH ================= -->
-<div class="modal fade" id="modalTambahGaleri" tabindex="-1">
+<div class="modal fade" id="modalTambahPengurus" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
 
-            <form action="{{ route('galeri.store') }}"
+            <form action="{{ route('pengurus.store') }}"
                   method="POST"
                   enctype="multipart/form-data">
                 @csrf
 
                 <div class="modal-header bg-primary text-white">
                     <h5 class="modal-title">
-                        <i class="fas fa-images"></i> Tambah Galeri
+                        <i class="fas fa-users"></i> Tambah Pengurus
                     </h5>
                     <button class="btn-close btn-close-white"
                             data-bs-dismiss="modal"></button>
@@ -191,18 +180,13 @@
                 <div class="modal-body">
 
                     <div class="mb-3">
-                        <label>Judul</label>
-                        <input type="text" name="judul" class="form-control" required>
+                        <label>Nama</label>
+                        <input type="text" name="nama" class="form-control" required>
                     </div>
 
                     <div class="mb-3">
-                        <label>Kategori</label>
-                        <input type="text" name="kategori" class="form-control" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label>Deskripsi</label>
-                        <textarea name="deskripsi" class="form-control" rows="4" required></textarea>
+                        <label>Jabatan</label>
+                        <input type="text" name="jabatan" class="form-control" required>
                     </div>
 
                     <div class="mb-3">
@@ -224,33 +208,14 @@
         </div>
     </div>
 </div>
-{{-- === Style dan Script SweetAlert untuk konfirmasi hapus === --}}
+
+{{-- === SweetAlert Hapus === --}}
 <style>
-  /* FORCE FIX SWEETALERT BUTTON */
-  .swal2-actions {
-      z-index: 9999 !important;
-  }
-
-  .swal2-confirm,
-  .swal2-cancel {
-      opacity: 1 !important;
-      visibility: visible !important;
-      color: #fff !important;
-      font-weight: 600;
-  }
-
-  .swal2-cancel {
-      background-color: #6c757d !important;
-  }
-
-  .swal2-confirm {
-      background-color: #dc3545 !important;
-  }
-
-  .swal2-confirm:hover,
-  .swal2-cancel:hover {
-      filter: brightness(1.1);
-  }
+  .swal2-actions { z-index: 9999 !important; }
+  .swal2-confirm, .swal2-cancel { opacity:1 !important; visibility:visible !important; color:#fff; font-weight:600;}
+  .swal2-cancel { background-color:#6c757d !important; }
+  .swal2-confirm { background-color:#dc3545 !important; }
+  .swal2-confirm:hover, .swal2-cancel:hover { filter: brightness(1.1); }
 </style>
 
 @if(session('success'))
@@ -264,8 +229,8 @@ Swal.fire({
 });
 </script>
 @endif
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-{{-- Script untuk konfirmasi hapus --}}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.btn-hapus').forEach(btn => {
@@ -274,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             Swal.fire({
                 title: 'Yakin ingin menghapus?',
-                text: 'Data galeri yang dihapus tidak dapat dikembalikan!',
+                text: 'Data pengurus yang dihapus tidak dapat dikembalikan!',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#d33',
