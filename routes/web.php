@@ -78,11 +78,16 @@ Route::delete('/admin/event/delete/{id}', [EventController::class, 'destroy'])->
 Route::get('/event/{id}/rsvp', [EventController::class, 'rsvp'])->name('event.rsvp');
 Route::get('/event/{id}/calendar', [EventController::class, 'calendar'])->name('event.calendar');
 
-
 // Authentication Routes Middleware IsAdmin
 Route::get('/admin/{page?}', [AdminController::class, 'index']);
 
-
+// loginpage Routes
+Route::get('/login', function () {
+    return view('loginpage');
+})->name('login');
+Route::get('/loginpage', function () {
+    return view('loginpage');
+})->name('loginpage');
 
 
 
