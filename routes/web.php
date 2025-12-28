@@ -80,6 +80,3 @@ Route::get('/login', function () {
 Route::get('/loginpage', function () {
     return view('loginpage');
 })->name('loginpage');
-
-
-
