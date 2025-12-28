@@ -23,7 +23,7 @@ class GaleriController extends Controller
             'foto' => 'required|image|mimes:jpg,jpeg,png|max:2048'
         ]);
 
-        $filename = time() . "." . $request->foto->extension();
+        $filename = uniqid() . '.' . $request->foto->extension();
         $request->foto->move(public_path('images/galeri'), $filename);
 
         Galeri::create([
@@ -33,9 +33,9 @@ class GaleriController extends Controller
             'foto' => $filename
         ]);
 
-        return back()->with('success', 'Foto berhasil ditambahkan');
+        return redirect('/admin/galeri')
+            ->with('success', 'Foto berhasil ditambahkan');
     }
-
     public function update(Request $request, $id)
     {
         $g = Galeri::findOrFail($id);
@@ -45,26 +45,39 @@ class GaleriController extends Controller
         $g->deskripsi = $request->deskripsi;
 
         if ($request->hasFile('foto')) {
-            $filename = time() . "." . $request->foto->extension();
+            // hapus foto lama
+            $old = public_path('images/galeri/' . $g->foto);
+            if (file_exists($old)) unlink($old);
+
+            // simpan foto baru
+            $filename = uniqid() . '.' . $request->foto->extension();
             $request->foto->move(public_path('images/galeri'), $filename);
             $g->foto = $filename;
         }
 
         $g->save();
-        return back()->with('success', 'Foto berhasil diperbarui');
+
+        return redirect('/admin/galeri')
+            ->with('success', 'Foto berhasil diperbarui');
     }
 
     public function destroy($id)
     {
         $g = Galeri::findOrFail($id);
 
-        // hapus file fisik
         $path = public_path('images/galeri/' . $g->foto);
         if (file_exists($path)) unlink($path);
 
         $g->delete();
 
-        return back()->with('success', 'Foto berhasil dihapus');
+        return redirect('/admin/galeri')
+            ->with('success', 'Foto berhasil dihapus');
+    }
+    public function admin()
+    {
+        $galeri = Galeri::all();
+
+        return view('admin.pages.galeri', compact('galeri'));
     }
 }
 

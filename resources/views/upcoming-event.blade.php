@@ -95,22 +95,6 @@
                     <i class="fas fa-calendar-plus text-2xl"></i>
                 </a>
             </div>
-
-            <!-- EDIT & DELETE -->
-            <div class="flex gap-2 mt-4">
-                <button onclick="openEditModal({{ $event }})"
-                        class="flex-1 bg-yellow-500 text-white py-2 rounded-lg hover:bg-yellow-600 transition">
-                    Edit
-                </button>
-                <form method="POST" action="{{ route('event.delete', $event->id) }}" onsubmit="return confirm('Hapus event ini?')">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit"
-                            class="flex-1 bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition">
-                        Hapus
-                    </button>
-                </form>
-            </div>
         </div>
     </div>
     @endforeach

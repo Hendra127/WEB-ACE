@@ -8,9 +8,9 @@
 
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
         <h1 class="text-xl md:text-2xl font-bold">Mitra Kami</h1>
-        <button onclick="openAddModal()" class="w-full sm:w-auto bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+        <!--<button onclick="openAddModal()" class="w-full sm:w-auto bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
             Tambah Mitra
-        </button>
+        </button>-->
     </div>
 
     {{-- FILTER & SEARCH --}}
@@ -43,7 +43,7 @@
                 <p class="text-gray-500 mt-2 text-xs md:text-sm">Kategori: {{ $mitra->kategori }}</p>
                 <p class="text-gray-500 text-xs md:text-sm">Lokasi: {{ $mitra->lokasi }}</p>
 
-                <div class="flex gap-2 justify-between mt-4">
+                <!--<div class="flex gap-2 justify-between mt-4">
                     <button onclick="openEditModal({{ $mitra->id }}, '{{ addslashes($mitra->nama) }}', '{{ addslashes($mitra->kategori) }}', '{{ addslashes($mitra->lokasi) }}', `{{ $mitra->deskripsi }}`)"
                         class="flex-1 text-green-600 hover:bg-green-50 py-1 rounded text-sm">
                         Edit
@@ -53,7 +53,7 @@
                         @csrf @method('DELETE')
                         <button type="submit" onclick="return confirm('Hapus mitra ini?')" class="w-full text-red-600 hover:bg-red-50 py-1 rounded text-sm">Hapus</button>
                     </form>
-                </div>
+                </div>-->
             </div>
         @endforeach
 
@@ -61,7 +61,7 @@
 </div>
 
 {{-- MODAL ADD --}}
-<div id="addModal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+<!--<div id="addModal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
     <div class="bg-white p-6 rounded w-full max-w-md max-h-screen overflow-y-auto">
         <h2 class="text-lg md:text-xl font-bold mb-4">Tambah Mitra</h2>
 
@@ -82,10 +82,10 @@
             </div>
         </form>
     </div>
-</div>
+</div>-->
 
 {{-- MODAL EDIT --}}
-<div id="editModal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+<!--<div id="editModal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
     <div class="bg-white p-6 rounded w-full max-w-md max-h-screen overflow-y-auto">
         <h2 class="text-lg md:text-xl font-bold mb-4">Edit Mitra</h2>
 
@@ -106,7 +106,7 @@
             </div>
         </form>
     </div>
-</div>
+</div>-->
 
 <script>
 function openAddModal() {

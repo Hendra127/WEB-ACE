@@ -17,6 +17,9 @@
     <!-- FONT: GOOGLE -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -61,9 +64,9 @@
 
         <!-- Logo + Text -->
         <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="/logo.png">
+            <img src="http://127.0.0.1:8000/images/logoace.png">
             <div class="org-text">
-                <b>ASOSIASI CHIEF ENGINEER BALI</b><br>
+                <b>ASOSIASI CHIEF ENGINEER LOMBOK</b><br>
                 BALI CHIEF ENGINEERS ASSOCIATION
             </div>
         </a>
@@ -108,6 +111,15 @@
                 <li class="ms-3">
                     <a class="btn btn-anggota" href="#">DAFTAR ANGGOTA</a>
                 </li>
+            </ul>
+        </div>
+        <div class="dropdown ms-auto text-right">
+            <button class="btn dropdown-toggle text-decoration-none" type="button" data-bs-toggle="dropdown">
+                <i class="fas fa-user-circle fa-lg" style="width: 30px; height: 30px"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="/login"><i class="fas fa-door-open"></i> Login</a></li>
+                <li><a class="dropdown-item" href="/logout"><i class="fas fa-door-closed"></i> Logout</a></li>
             </ul>
         </div>
 

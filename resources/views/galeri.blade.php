@@ -22,12 +22,6 @@
                     @endforeach
                 </select>
             </div>
-
-            <!-- Tombol Tambah -->
-            <button onclick="openAddModal()"
-                    class="w-full bg-green-600 text-white px-5 py-3 rounded shadow hover:bg-green-700 font-semibold md:w-auto">
-                + Tambah Foto
-            </button>
         </div>
 
         <!-- GRID -->
@@ -39,7 +33,7 @@
                 <div class="relative group">
 
                     <!-- THUMBNAIL -->
-                    <img src="{{ asset('public/images/galeri/' . $g->foto) }}"
+                    <img src="{{ asset('images/galeri/'.$g->foto) }}" class="img-fluid mb-2"
                          alt="{{ $g->judul }}"
                          class="w-full h-48 sm:h-56 lg:h-64 object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer"
                          onclick="openLightbox(
@@ -63,7 +57,7 @@
                         {{ $g->deskripsi }}
                     </p>
 
-                    <div class="flex flex-col gap-3">
+                    <!--<div class="flex flex-col gap-3">
                         <button onclick="openEditModal(
                             {{ $g->id }},
                             `{{ addslashes($g->judul) }}`,
@@ -83,7 +77,7 @@
                                 Hapus
                             </button>
                         </form>
-                    </div>
+                    </div>-->
                 </div>
 
             </div>
@@ -98,7 +92,7 @@
 
 <!-- ===================================================== -->
 <!-- ===============  ADD MODAL   ======================== -->
-<!-- ===================================================== -->
+<!-- ===================================================== 
 <div id="addModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
     <div class="bg-white w-full sm:w-96 max-w-full rounded-lg shadow p-6 overflow-auto max-h-[90vh]">
         <h3 class="font-bold text-lg sm:text-xl mb-4">Tambah Foto</h3>
@@ -124,13 +118,13 @@
             </div>
         </form>
     </div>
-</div>
+</div>-->
 
 
 <!-- ===================================================== -->
 <!-- ===============  EDIT MODAL   ======================== -->
 <!-- ===================================================== -->
-<div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+<!--<div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
     <div class="bg-white w-full sm:w-96 max-w-full rounded-lg shadow p-6 overflow-auto max-h-[90vh]">
         <h3 class="font-bold text-lg sm:text-xl mb-4">Edit Foto</h3>
 
@@ -156,7 +150,7 @@
             </div>
         </form>
     </div>
-</div>
+</div>-->
 
 
 <!-- ===================================================== -->
