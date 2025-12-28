@@ -87,12 +87,4 @@ Route::get('/login', function () {
 })->name('login');
 Route::get('/loginpage', function () {
     return view('loginpage');
-<<<<<<< HEAD
-})->name('loginpage');
-=======
-})->name('loginpage');
 
-
-
-
->>>>>>> b7aa45d4d2ec9f4ab3cfe9f3eb3d604a43c606c2
