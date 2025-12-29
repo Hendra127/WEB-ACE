@@ -51,8 +51,7 @@
             <li>Lorem ipsum dolor sit amet consectetur.</li>
         </ul>
     </div>
-
-</div>
+  
 
 @include('components.footer')
 @endsection

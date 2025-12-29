@@ -92,13 +92,14 @@
     <div class="login-section" >
         <div class="login-box">
             <h2>Login</h2>
+<form method="POST" action="{{ route('login.process') }}">
+    @csrf
 
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Password" required>
+    <input type="email" name="email" required>
+    <input type="password" name="password" required>
 
-                <button type="submit">Masuk</button>
+    <button type="submit">Login</button>
+</form>
             </form>
         </div>
     </div>
@@ -106,3 +107,8 @@
 
 </body>
 </html>
+
+
+
+
+

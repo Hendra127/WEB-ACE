@@ -12,6 +12,7 @@ use App\Http\Controllers\MitraController;
 use App\Http\Controllers\LowonganController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\AuthController;
 
 // Home Route
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -81,10 +82,14 @@ Route::get('/event/{id}/calendar', [EventController::class, 'calendar'])->name('
 // Authentication Routes Middleware IsAdmin
 Route::get('/admin/{page?}', [AdminController::class, 'index']);
 
-// loginpage Routes
-Route::get('/login', function () {
-    return view('loginpage');
-})->name('login');
+// halaman login
 Route::get('/loginpage', function () {
     return view('loginpage');
+})->name('loginpage');
 
+// proses login
+Route::post('/login', [AuthController::class, 'login'])
+    ->name('login.process');
+// proses logout
+Route::get('/logout', [AuthController::class, 'logout'])
+    ->name('loginpage');

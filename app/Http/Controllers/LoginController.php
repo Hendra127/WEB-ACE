@@ -28,4 +28,24 @@ class LoginController extends Controller
             'email' => 'Email atau password salah'
         ]);
     }
-}
+
+        // 🔥 LOGIKA REDIRECT SETELAH LOGIN
+        if (auth()->user()->role === 'admin') {
+            return redirect()->route('admin.dashboard');
+        }
+
+        return redirect()->route('dashboard');
+
+          return back()->withErrors([
+        'email' => 'Email atau password salah',
+    ]);
+    }
+
+  use App\Http\Controllers\AdminController;
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])
+        ->name('admin.dashboard');
+});
+
+
