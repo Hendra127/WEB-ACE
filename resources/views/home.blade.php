@@ -13,9 +13,6 @@
     <div class="absolute inset-0 flex items-center justify-center text-center text-white px-4">
         <div class="max-w-3xl">
 
-            <button class="mb-6 px-4 py-2 bg-yellow-400 text-black rounded-full text-sm font-semibold hover:bg-yellow-500 transition animate__animated animate__fadeInUp">
-                <a href="{{ route('artikel') }}">LOGIN</a>
-
                      <button class="mb-6 px-4 py-2 bg-yellow-400 text-white rounded-full text-sm font-semibold hover:bg-dark-500 transition animate_animated animate_fadeInUp">
                 <a href="{{ route('loginpage') }}">LOGIN</a>
 
@@ -42,19 +39,15 @@
             Welcome to ACE Lombok Association
         </h2>
 
-        <p class="text-gray-700 text-lg leading-relaxed mb-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet, neque sed 
-            sollicitudin fermentum, turpis nibh cursus sapien, vitae hendrerit enim turpis eget 
-            lorem. Integer sed pulvinar libero, id interdum nulla. Vestibulum ante ipsum primis in 
-            faucibus orci luctus et ultrices posuere cubilia curae; Praesent dictum urna in libero 
-            hendrerit, vel bibendum massa tempus. Nunc laoreet sit amet massa ac suscipit.
-        </p>
+        <p class="text-gray-700 leading-relaxed mb-6">
+    ASOSIASI CHIEF ENGINEER LOMBOK, disingkat ACE LOMBOK, dibentuk berdasarkan AD/ART
+    dan disahkan pada hari Sabtu, 08 April 2016 di Lombok Plaza Hotel.
+    <br>
+    ACE LOMBOK adalah organisasi profesi para Engineer Building, Mall, Pabrik,
+    Rumah Sakit, Hotel, Apartemen, Building Office, Restaurant, dan Fasilitas
+    Wisata di Nusa Tenggara Barat yang bersifat terbuka, majemuk, dan mandiri.
+</p>
 
-        <p class="text-gray-700 text-lg leading-relaxed mb-10">
-            Suspendisse potenti. Aenean sed ipsum vitae turpis tristique facilisis. Praesent ut 
-            semper ipsum. Phasellus pharetra, nisi vitae viverra blandit, magna massa euismod 
-            justo, vel convallis lectus magna in tellus. Sed vitae massa semper, sollicitudin 
-            libero sed, aliquam mauris. Nulla facilisi.
         </p>
     </div>
 </section>
@@ -67,8 +60,9 @@
 
         <div>
             <h2 class="text-4xl font-bold mb-4">About Us</h2>
-            <p class="text-gray-600 leading-relaxed mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent massa ex, suscipit ac est sit amet, semper molestie mi. Aenean consectetur porta urna nec porta. Etiam tincidunt feugiat dolor quis tempus. Donec varius ipsum nibh. Integer suscipit ultricies tellus, vitae mattis elit commodo in. Sed tincidunt leo a ante efficitur, ac dapibus leo imperdiet. Sed vitae augue a felis pharetra sagittis.
+            <p class="text-gray-700 leading-relaxed mb-6">
+                ASOSIASI CHIEF ENGINEER LOMBOK, disingkat ACE LOMBOK, dibentuk berdasarkan AD/ART dan disahkan pada hari Sabtu, 08 April 2016 di Lombok Plaza Hotel.
+
             </p>
             <a href="{{ route('aboutus') }}" class="px-6 py-3 bg-black text-white rounded-full" style="height: 25px; line-height: 45px;">
                 Learn More
@@ -81,7 +75,7 @@
 <!-- SECTION VISI MISI -->
 <section class="py-24 bg-gray-50">
     <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold">Visi & Misi Kami</h5>
+        <h2 class="text-4xl font-bold">TUJUAN KAMI</h5>
         <div class="w-16 h-1 bg-black mx-auto mt-4"></div>
     </div>
 
@@ -90,66 +84,35 @@
         <!-- Item 1 -->
         <div class="p-10 bg-white rounded-xl shadow text-center">
             <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-blue-900 text-white rounded-full">
-                ⚡
+                🏢
             </div>
-            <h3 class="text-xl font-bold mb-2">Management Energy</h3>
-            <p class="text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet tortor id libero.
+            <h3 class="text-xl font-bold mb-2">Manajemen Aset </h3>
+            <p class="text-gray-700 leading-relaxed-justify mb-6">
+                Menerapkan Management Asset Gedung dengan melaksanakan management pemeliharaan yang benar sehingga gedung dengan segala fasilitasnya menjadi handal serta mempunyai usia pakai yang lebih lama.
             </p>
         </div>
 
         <!-- Item 2 -->
         <div class="p-10 bg-white rounded-xl shadow text-center">
             <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-blue-900 text-white rounded-full">
-                🤝
+                👥
             </div>
-            <h3 class="text-xl font-bold mb-2">Membina Hubungan Kekeluargaan</h3>
+            <h3 class="text-xl font-bold mb-2">Hubungan Kerjasama</h3>
             <p class="text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor tellus sed urna placerat.
+                 Meningkatkan komunikasi dan kerja sama diantara sesama profesi Engineer se-Nusa Tenggara Barat sehingga setiap anggota diharapkan memiliki kemampuan dan 
+                 wawasan yang meningkat sesuai tuntutan profesi yang semakin berkembang serta mampu memberikan sumbangsih kepada lingkungan dan masyarakat.
             </p>
         </div>
 
         <!-- Item 3 -->
         <div class="p-10 bg-white rounded-xl shadow text-center">
             <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-blue-900 text-white rounded-full">
-                👥
-            </div>
-            <h3 class="text-xl font-bold mb-2">Melakukan Hubungan Kerjasama</h3>
-            <p class="text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae elit ac mauris fermentum.
-            </p>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="p-10 bg-white rounded-xl shadow text-center">
-            <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-blue-900 text-white rounded-full">
                 🌐
             </div>
-            <h3 class="text-xl font-bold mb-2">Kegiatan Sosial</h3>
+            <h3 class="text-xl font-bold mb-2">Efisiensi Energi dan Pengelolaan Lingkungan </h3>
             <p class="text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo ligula ac efficitur gravida.
-            </p>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="p-10 bg-white rounded-xl shadow text-center">
-            <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-blue-900 text-white rounded-full">
-                📘
-            </div>
-            <h3 class="text-xl font-bold mb-2">Mengasah Pengetahuan</h3>
-            <p class="text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum finibus mi sed justo aliquam.
-            </p>
-        </div>
-
-        <!-- Item 6 -->
-        <div class="p-10 bg-white rounded-xl shadow text-center">
-            <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-blue-900 text-white rounded-full">
-                🔄
-            </div>
-            <h3 class="text-xl font-bold mb-2">Wadah Tukar – Menukar Informasi</h3>
-            <p class="text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a nisi vitae felis faucibus.
+                Turut serta menjaga kelestarian lingkungan 
+                dengan mengurangi emisi gas buang dengan melakukanenergy monitoring, new technology, saving energy serta redesign system.
             </p>
         </div>
 

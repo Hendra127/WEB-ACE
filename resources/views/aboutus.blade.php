@@ -15,16 +15,20 @@
 
         <!-- TEXT SECTION -->
         <div class="px-4md:pl-20 md:pr-10" style="margin-left: 190px">
+            <h2 class="text-1xl font-bold">NAMA DAN KEDUDUKAN</h5>
             <p class="text-gray-700 leading-relaxed mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae justo nec nulla facilisis bibendum. Integer non suscipit orci.
+                Wadah ini bernama ASOSIASI CHIEF ENGINEER LOMBOK, disingkat ACE LOMBOK, di bentuk
+ADART dan di SAH kan pada hari SABTU 08 APRIL 2016 di Lombok Plaza Hotel.
             </p>
 
+            <h2 class="text-1xl font-bold">SIFAT</h5>
             <p class="text-gray-700 leading-relaxed mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel libero nec sapien aliquet porttitor. Donec vulputate lacus sem fermentum.
+                ACE LOMBOK adalah organisasi profesi para Engineer Building, Mall, Pabrik, Rumah Sakit, Hotel, Apartemen, Building Office, Restaurant, dan Fasilitas Wisata di Nusa Tenggara Barat yang bersifat terbuka, majemuk, dan mandiri.
             </p>
 
+            <h2 class="text-1xl font-bold">IDENTITAS</h5>
             <p class="text-gray-700 leading-relaxed mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et arcu sed orci feugiat congue. Aliquam erat volutpat.
+                Identitas ACE Lombok adalah : Menjunjung tinggi professionalisme berdasarkan nilai etika, moral dan kemanusiaan 
             </p>
         </div>
 
@@ -43,12 +47,15 @@
     <!-- BOX SECTION -->
     <div class="mt-14 p-8 border rounded-xl bg-gray-50 ml-4 md:ml-20 mr-4 md:mr-20">
         <p class="font-semibold text-gray-800 mb-3">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            ARTI LOGO ACE LOMBOK 
         </p>
+        <img src="{{ asset('images/logoace.png') }}" class="w-28 mx-auto" alt="" style="margin-left: 300px; margin-top: -40px; margin-bottom: 20px; background-image: white; padding: 10px; border-radius: 10px;">
+        
         <ul class="list-disc pl-6 text-gray-700">
-            <li>Lorem ipsum dolor sit amet consectetur.</li>
-            <li>Lorem ipsum dolor sit amet consectetur.</li>
-            <li>Lorem ipsum dolor sit amet consectetur.</li>
+            <li>Lambang Roda Gigi, bahwa ACE LOMBOK berkiprah secara global yang berkesinambungan dan dinamis semua segi profesi engineer. Meliputi Apartemen, Hotel, Mall, Pabrik, Rumah Sakit, Wisata, Office, Restaurant, Industri, Gedung Pendidikan, Gedung Pemerintahan, Sport dan Multimedia.</li>
+            <li>Warna Biru, bahwa memiliki kesan kreatif, tenang dan menekan keinginan, dimana tidak meminta minta untuk memperhatikan, serta menampilkan kekuatan teknologi, kebersihan, udara, langit, air dan laut.</li>
+            <li>Lambang  Lumbung Adalah tempat penyimpanan padi suku sasak asli Lombok.</li>
+            <li> Tulisan  safety First Adalah setiap pekerja harus mengutamakan keselamatan dalam melakukan pekerjaan.</li>
         </ul>
     </div>
   
